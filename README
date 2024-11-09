@@ -27,6 +27,8 @@ Project Basilic functions by processing JavaScript code sent via terminal and re
 
 INSTRUCTIONS
 
+Python is required to run Project Basilic. If you do not have Python, please download it at https://www.python.org/downloads/
+
 To set up Project Basilic, the files must first be extracted (if compressed).
 
 Once the files are extracted, go to the config.json file. An explanation of each variable is in the EXTRA INFORMATION section. If the program runs fine, this step can be skipped.
