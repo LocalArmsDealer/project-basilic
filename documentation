@@ -1,0 +1,66 @@
+DroneBlocks Documentation
+This file came paired with Project Basilic. Feel free to share or modify it separately or paired with Project Basilic.
+Copyright (C) 2024 Alina, CC-BY-SA 3.0
+
+<> marks required inputs, [] marks optional inputs. || is used to mark an OR statement (separates possible input variations that are mutually exclusive).
+x axis is red (forward/backward), y axis is blue (left/right), z axis is green (up/down)
+
+TAKEOFF:
+
+takeOff() - Starts drone takeoff sequence.
+takeOffAfter(<time>) - Starts drone takeoff sequence after `time` seconds.
+
+
+NAVIGATION:
+
+setSpeed(<speed>, <"cm/s" || "in/s">) - Sets the speed to `speed` units.
+flyForward(<distance>, <"cm" || "in">) - Flies the drone forward `distance` units.
+flyBackward(<distance>, <"cm" || "in">) - Flies the drone backward `distance` units.
+flyLeft(<distance>, <"cm" || "in">) - Flies the drone left `distance` units.
+flyRight(<distance>, <"cm" || "in">) - Flies the drone right `distance` units.
+flyUp(<distance>, <"cm" || "in">) - Flies the drone upwards `distance` units.
+flyDown(<distance>, <"cm" || "in">) - Flies the drone downwards `distance` units.
+flyXYZ(<x>, <y>, <z>, <"cm" || "in">) - Flies the drone in all directions, with each direction's distance specified by its respective variable (ie: "xdist" moving the drone `xdist` units on the x axis).
+flyCurve(<x1>, <y1>, <z1>, <x2>, <y2>, <z2>, <"cm" || "in">) - Flies the drone in an arc. The first point is the drone's position before the command, the second point is (x1, y1, z1), and the third point is (x2, y2, z2). All points are relative to the drone (drone is considered 0, 0, 0 by this command) and in the specified units.
+hover(<time>) - Hovers the drone for `time` seconds. Functionally identical to JavaScript's 'sleep()' function.
+yawRight(<deg>) - Yaws the drone `deg` degrees to the right.
+yawLeft(<deg>) - Yaws the drone `deg` degrees to the left.
+
+
+FLIP:
+
+flipForward() - Flips the drone forward.
+flipBackward() - Flips the drone backward.
+flipLeft() - Flips the drone to the left.
+flipRight() - Flips the drone to the right.
+
+
+LOOPS:
+
+For and while loops, identical to standard JavaScript.
+
+
+LOGIC:
+
+If statements, and/or statements, and if statements, identical to standard JavaScript.
+
+
+MATH:
+
+Standard math and random JavaScript modules. 'import math' and 'import random' give all available blocks.
+
+
+VARIABLES:
+
+Standard JavaScript variables.
+
+
+FUNCTIONS:
+
+Standard JavaScript functions. 
+
+
+LAND:
+
+landThenTakeOff(<time>) - Lands the drone, then takes off after `time` seconds.
+land() - Lands the drone.
