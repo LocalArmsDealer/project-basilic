@@ -16,13 +16,13 @@ def main():
 
     while True:
         try:
-            input = input("Enter code to send to the drone (or 'exit' to quit):")
+            js_input = input("Enter code to send to the drone (or 'exit' to quit): ")
 
-            if input.lower() == "exit":
+            if js_input.lower() == "exit":
                 print("Exiting Project Basilic...")
                 break
 
-            response = d_ctrl.send_command(input)
+            response = d_ctrl.send_command(js_input)
             print(f"Drone response {response} received.")
         
         except KeyboardInterrupt:
