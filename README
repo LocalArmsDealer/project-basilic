@@ -18,12 +18,32 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 INTRODUCTION
 
+Project Basilic is a drone control program that allows the user to send commands to a connected Tello drone via UDP. All valid commands are supported, and logs are stored locally for debugging and review.
+
+This program exists to fix the issue of certain firewalls blocking the ability to send commands to Tello drones. If you do not have this issue, you likely do not need Project Basilic.
+
+Project Basilic functions by processing JavaScript code sent via terminal and relaying it to the connected drone.
+
 
 INSTRUCTIONS
 
+To set up Project Basilic, the files must first be extracted (if compressed).
+
+Once the files are extracted, go to the config.json file. An explanation of each variable is in the EXTRA INFORMATION section. If the program runs fine, this step can be skipped.
+
+When the config.json file is configured as needed, navigate to the "Project Basilic" folder in Command Prompt or your operating system's equivalent and run 'python3 /src/main.py'.
 
 COMMON ERRORS/BUGS
+
+No current known bugs. When bugs and errors are found, they will be added here.
 
 
 EXTRA INFORMATION
 
+Here is an explanation of the variables in config.json:
+	drone_ip: The IP address of the connected drone. To find the drone's IP address when connected to its WiFi, type 'ipconfig' into the command prompt/shell, or `ifconfig` if on MacOS/Linux. Most commercial drones have default IP addresses assigned, which can be found in the drone's documentation. If using a Tello drone, the default drone IP is 192.168.10.1.
+	drone_port: The port of the connected drone. Default is 8889, although 14550 is also commonly used. Check your drone's documentation for its default port.
+	serverhost: The server's IP address. If you downloaded Project Basilic, the serverhost is 0.0.0.0. Otherwise, the serverhost is the IP address of the device running Project Basilic.
+	log_level: Determines the verbosity of the logs. The options in decreasing order of verbosity are DEBUG, INFO, WARNING, ERROR, and CRITICAL. For general use, INFO or WARNING will do; use ERROR if the logs are full of warnings that can be ignored, and use DEBUG for debugging and development.
+	log_folder: Specifies which folder the log files will be saved in. The default folder is "/logs". If a nonexistant folder is specified, that folder will be created.
+	timeout: Specifies how many seconds the server should wait for a response from the drone before forcing a landing.
