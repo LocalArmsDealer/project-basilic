@@ -21,7 +21,7 @@ os.makedirs(log_folder, exist_ok=True)
 
 # Log file name picker
 c_time = datetime.now().strftime("%d%m%y-%H%M")
-log_name = f"{log_folder/{c_time}.log}"
+log_name = f"{log_folder}/{c_time}.log"
 
 # Log file maker
 logging.basicConfig(
